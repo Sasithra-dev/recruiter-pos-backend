@@ -1,13 +1,13 @@
-import { BusinessOrganisation } from '../entities/BusinessOrganisationModel';
+import { Organisation } from '../entities/OrganisationModel';
 
 export const seedOrganisations = async () => {
     try {
         console.log('Seeding Organisations...');
 
         // Clear existing Organisations
-        await BusinessOrganisation.deleteMany({});
+        await Organisation.deleteMany({});
 
-        const defaultOrg = await BusinessOrganisation.create({
+        const defaultOrg = await Organisation.create({
             name: 'Acme Recruiting'
         });
 

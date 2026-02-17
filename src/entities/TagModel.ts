@@ -37,7 +37,7 @@ const tagSchema: Schema = new Schema({
     },
     organisation: {
         type: Schema.Types.ObjectId,
-        ref: 'BusinessOrganisation',
+        ref: 'Organisation',
         default: null
     },
     active: {
