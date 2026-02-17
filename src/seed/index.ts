@@ -1,6 +1,6 @@
 import { connectDB } from '../config/db';
-import { seedTags } from './TagSeeder';
-import { seedOrganisations } from './OrganisationSeeder';
+import { seedTags } from './tag.seed';
+import { seedOrganisations } from './organisation.seed';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 

@@ -2,7 +2,7 @@ import { TagRepository } from '../repository/tag.repository';
 import { ITag } from '../entity/tag.model';
 import { TagColorRepository } from '../repository/tag-color.repository';
 import { applyPatch } from 'fast-json-patch';
-import { validateTagCreate, validateTagUpdate } from '../validators/tagValidators';
+import { validateTagCreate, validateTagUpdate } from '../validators/tag.validators';
 
 export class TagService {
     private repository: TagRepository;

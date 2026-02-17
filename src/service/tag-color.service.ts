@@ -2,7 +2,7 @@ import { TagColorRepository } from '../repository/tag-color.repository';
 import { ITagColor } from '../entity/tag-color.model';
 import mongoose from 'mongoose';
 
-import { validateTagColorCreate } from '../validators/tagValidators';
+import { validateTagColorCreate } from '../validators/tag.validators';
 
 export class TagColorService {
     private repository: TagColorRepository;

@@ -2,11 +2,11 @@ import express, { Express, Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import { logger } from './utils/logger';
-import { tenantMiddleware } from './middleware/tenantMiddleware';
+import { tenantMiddleware } from './middleware/tenant.middleware';
 import { swaggerSpec } from './config/swagger';
 import swaggerUi from 'swagger-ui-express';
 
-import { errorHandler } from './middleware/errorMiddleware';
+import { errorHandler } from './middleware/error.middleware';
 
 import routes from './routes/index';
 

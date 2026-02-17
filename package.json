@@ -1,13 +1,13 @@
 {
-  "name": "recruiter-service-POS",
+  "name": "recruiter-pos-backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server.ts",
     "start": "node dist/server.js",
-    "seed": "ts-node src/scripts/index.ts",
-    "seed:tags": "ts-node src/scripts/TagSeeder.ts",
+    "seed": "ts-node src/seed/index.ts",
+    "seed:tags": "ts-node src/seed/tag.seed.ts",
     "validate:openapi": "swagger-cli validate api-docs/main.yaml",
     "bundle:openapi": "swagger-cli bundle api-docs/main.yaml -o api-docs/bundled.yaml",
     "docs": "npm run validate:openapi && npm run bundle:openapi",

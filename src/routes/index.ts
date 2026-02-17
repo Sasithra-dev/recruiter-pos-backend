@@ -1,5 +1,5 @@
 import express from 'express';
-import tagRoutes from './tagRoutes';
+import tagRoutes from './tag.routes';
 
 const router = express.Router();
 
