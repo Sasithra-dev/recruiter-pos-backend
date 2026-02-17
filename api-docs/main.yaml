@@ -1,0 +1,40 @@
+openapi: 3.0.0
+info:
+  title: Recruiter Service API
+  version: 1.0.0
+  description: API documentation for the Recruiter Service, covering Tags, Companies, Jobs, and Candidates.
+
+servers:
+  - url: http://localhost:3002
+    description: Local server
+
+components:
+  securitySchemes:
+    tenantId:
+      type: apiKey
+      in: header
+      name: x-tenant-id
+      description: The Organisation/Tenant ID for multi-tenant data isolation.
+    userId:
+      type: apiKey
+      in: header
+      name: x-user-id
+      description: The ID of the user making the request (for auditing).
+
+security:
+  - tenantId: []
+    userId: []
+
+tags:
+  - name: Tags
+    description: Tag management for Candidates, Clients, and Jobs
+
+paths:
+  /api/v1/tags/colors:
+    $ref: './tags.yaml#/paths/~1api~1v1~1tags~1colors'
+  /api/v1/tags/colors/{id}:
+    $ref: './tags.yaml#/paths/~1api~1v1~1tags~1colors~1{id}'
+  /api/v1/tags:
+    $ref: './tags.yaml#/paths/~1api~1v1~1tags'
+  /api/v1/tags/{id}:
+    $ref: './tags.yaml#/paths/~1api~1v1~1tags~1{id}'

@@ -1,0 +1,160 @@
+openapi: 3.0.0
+info:
+  title: Tag API Partial
+  version: 1.0.0
+
+paths:
+  /api/v1/tags/colors:
+    get:
+      summary: Get available tag colors
+      tags: [Tags]
+      security:
+        - tenantId: []
+      parameters:
+        - in: query
+          name: entityType
+          schema:
+            type: string
+            enum: [candidate, client, job]
+      responses:
+        '200':
+          description: List of colors
+    post:
+      summary: Add a new tag color
+      tags: [Tags]
+      security:
+        - tenantId: []
+        - userId: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [color, entityType]
+              properties:
+                color:
+                  type: string
+                  description: Hex color code
+                entityType:
+                  type: string
+                  enum: [candidate, client, job]
+      responses:
+        '201':
+          description: Color added successfully
+
+  /api/v1/tags/colors/{id}:
+    delete:
+      summary: Delete a tag color
+      tags: [Tags]
+      security:
+        - tenantId: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Color deleted successfully
+
+  /api/v1/tags:
+    post:
+      summary: Create a new tag
+      tags: [Tags]
+      security:
+        - tenantId: []
+        - userId: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name, color, entityType]
+              properties:
+                name:
+                  type: string
+                color:
+                  type: string
+                  description: ID of the TagColor
+                  example: "699308adfb6a19ff9b9c9314"
+                entityType:
+                  type: string
+                  enum: [candidate, client, job]
+      responses:
+        '201':
+          description: Tag created successfully
+        '400':
+          description: Bad request
+    get:
+      summary: Get all tags
+      tags: [Tags]
+      security:
+        - tenantId: []
+      parameters:
+        - in: query
+          name: entityType
+          schema:
+            type: string
+            enum: [candidate, client, job]
+        - in: query
+          name: search
+          schema:
+            type: string
+        - in: query
+          name: archived
+          schema:
+            type: string
+            enum: ['true', 'false']
+      responses:
+        '200':
+          description: List of tags
+
+  /api/v1/tags/{id}:
+    patch:
+      summary: Update a tag (JSON Patch)
+      tags: [Tags]
+      security:
+        - tenantId: []
+        - userId: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  op:
+                    type: string
+                  path:
+                    type: string
+                  value:
+                    type: object
+      responses:
+        '200':
+          description: Tag updated successfully
+
+    delete:
+      summary: Archive a tag
+      tags: [Tags]
+      security:
+        - tenantId: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Tag archived successfully
