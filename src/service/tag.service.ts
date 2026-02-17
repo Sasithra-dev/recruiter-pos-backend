@@ -1,6 +1,6 @@
-import { TagRepository } from '../repositories/TagRepository';
-import { ITag } from '../entities/TagModel';
-import { TagColorRepository } from '../repositories/TagColorRepository';
+import { TagRepository } from '../repository/tag.repository';
+import { ITag } from '../entity/tag.model';
+import { TagColorRepository } from '../repository/tag-color.repository';
 import { applyPatch } from 'fast-json-patch';
 import { validateTagCreate, validateTagUpdate } from '../validators/tagValidators';
 

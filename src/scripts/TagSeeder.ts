@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-import { Tag } from '../entities/TagModel';
-import { TagColor } from '../entities/TagColorModel';
-import { Organisation } from '../entities/OrganisationModel';
+import { Tag } from '../entity/tag.model';
+import { TagColor } from '../entity/tag-color.model';
+import { Organisation } from '../entity/organisation.model';
 import dotenv from 'dotenv';
 import { connectDB } from '../config/db';
 

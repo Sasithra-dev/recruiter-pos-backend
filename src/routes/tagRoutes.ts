@@ -7,7 +7,7 @@ import {
     getTagColors,
     createTagColor,
     deleteTagColor
-} from '../controllers/tagController';
+} from '../controller/tag.controller';
 
 const router = express.Router();
 

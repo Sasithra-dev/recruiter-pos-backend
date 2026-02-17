@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import { TagService } from '../services/TagService';
-import { TagColorService } from '../services/TagColorService';
+import { TagService } from '../service/tag.service';
+import { TagColorService } from '../service/tag-color.service';
 
 const tagService = new TagService();
 const tagColorService = new TagColorService();

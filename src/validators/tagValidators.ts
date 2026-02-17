@@ -1,5 +1,5 @@
-import { ITag } from '../entities/TagModel';
-import { ITagColor } from '../entities/TagColorModel';
+import { ITag } from '../entity/tag.model';
+import { ITagColor } from '../entity/tag-color.model';
 import { ValidationError } from '../utils/errors';
 
 export const validateTagCreate = (data: Partial<ITag>): void => {

@@ -1,5 +1,5 @@
-import { TagColorRepository } from '../repositories/TagColorRepository';
-import { ITagColor } from '../entities/TagColorModel';
+import { TagColorRepository } from '../repository/tag-color.repository';
+import { ITagColor } from '../entity/tag-color.model';
 import mongoose from 'mongoose';
 
 import { validateTagColorCreate } from '../validators/tagValidators';

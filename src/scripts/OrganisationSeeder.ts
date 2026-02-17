@@ -1,4 +1,4 @@
-import { Organisation } from '../entities/OrganisationModel';
+import { Organisation } from '../entity/organisation.model';
 
 export const seedOrganisations = async () => {
     try {
