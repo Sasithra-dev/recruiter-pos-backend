@@ -8,20 +8,7 @@ Enterprise-grade multi-tenant backend for recruiter portfolio management. Built 
 - Node.js 22 LTS
 - MongoDB (Running locally or on Atlas)
 
-### 2. Setup (Automated)
-Run the following command to install dependencies, configure environment, and seed the database:
-
-**Windows:**
-```powershell
-./setup.bat
-```
-
-**Linux/Mac:**
-```bash
-./setup.sh
-```
-
-### 3. Manual Installation
+### 2. Manual Installation
 ```bash
 # Install dependencies
 npm install
